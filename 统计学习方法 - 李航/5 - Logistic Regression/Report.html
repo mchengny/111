@@ -11781,7 +11781,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[220]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11883,10 +11883,10 @@ div#notebook {
             <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">*</span> <span class="n">db</span>
             
             <span class="c1"># Record the costs</span>
-            <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">100</span> == 0:
+            <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">1000</span> == 0:
                 <span class="n">costs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
             <span class="c1"># Print the cost every 100 iterations</span>
-            <span class="k">if</span> <span class="n">print_cost</span> <span class="ow">and</span> <span class="n">i</span><span class="o">%</span><span class="k">100</span> == 0:
+            <span class="k">if</span> <span class="n">print_cost</span> <span class="ow">and</span> <span class="n">i</span><span class="o">%</span><span class="k">1000</span> == 0:
                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cost after iteration </span><span class="si">%i</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cost</span><span class="p">))</span>
                 
         <span class="k">return</span> <span class="n">costs</span>
@@ -11962,7 +11962,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[221]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> 
@@ -11985,11 +11985,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[218]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">num_iterations</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">print_cost</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12005,1185 +12005,172 @@ div#notebook {
 <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Cost after iteration 0: 5.198604
-Cost after iteration 100: 4.367972
-Cost after iteration 200: 3.869417
-Cost after iteration 300: 3.492459
-Cost after iteration 400: 3.196838
-Cost after iteration 500: 2.957697
-Cost after iteration 600: 2.759349
-Cost after iteration 700: 2.591529
-Cost after iteration 800: 2.447254
-Cost after iteration 900: 2.321591
-Cost after iteration 1000: 2.210946
-Cost after iteration 1100: 2.112626
-Cost after iteration 1200: 2.024567
-Cost after iteration 1300: 1.945155
-Cost after iteration 1400: 1.873108
-Cost after iteration 1500: 1.807392
-Cost after iteration 1600: 1.747162
-Cost after iteration 1700: 1.691720
-Cost after iteration 1800: 1.640487
-Cost after iteration 1900: 1.592973
-Cost after iteration 2000: 1.548764
-Cost after iteration 2100: 1.507506
-Cost after iteration 2200: 1.468895
-Cost after iteration 2300: 1.432669
-Cost after iteration 2400: 1.398600
-Cost after iteration 2500: 1.366487
-Cost after iteration 2600: 1.336157
-Cost after iteration 2700: 1.307454
-Cost after iteration 2800: 1.280243
-Cost after iteration 2900: 1.254401
-Cost after iteration 3000: 1.229821
-Cost after iteration 3100: 1.206406
-Cost after iteration 3200: 1.184069
-Cost after iteration 3300: 1.162732
-Cost after iteration 3400: 1.142323
-Cost after iteration 3500: 1.122780
-Cost after iteration 3600: 1.104043
-Cost after iteration 3700: 1.086061
-Cost after iteration 3800: 1.068785
-Cost after iteration 3900: 1.052170
-Cost after iteration 4000: 1.036177
-Cost after iteration 4100: 1.020769
-Cost after iteration 4200: 1.005911
-Cost after iteration 4300: 0.991572
-Cost after iteration 4400: 0.977723
-Cost after iteration 4500: 0.964338
-Cost after iteration 4600: 0.951391
-Cost after iteration 4700: 0.938859
-Cost after iteration 4800: 0.926722
-Cost after iteration 4900: 0.914959
-Cost after iteration 5000: 0.903552
-Cost after iteration 5100: 0.892483
-Cost after iteration 5200: 0.881737
-Cost after iteration 5300: 0.871298
-Cost after iteration 5400: 0.861152
-Cost after iteration 5500: 0.851286
-Cost after iteration 5600: 0.841687
-Cost after iteration 5700: 0.832345
-Cost after iteration 5800: 0.823247
-Cost after iteration 5900: 0.814384
-Cost after iteration 6000: 0.805745
-Cost after iteration 6100: 0.797322
-Cost after iteration 6200: 0.789107
-Cost after iteration 6300: 0.781089
-Cost after iteration 6400: 0.773263
-Cost after iteration 6500: 0.765621
-Cost after iteration 6600: 0.758155
-Cost after iteration 6700: 0.750859
-Cost after iteration 6800: 0.743727
-Cost after iteration 6900: 0.736753
-Cost after iteration 7000: 0.729931
-Cost after iteration 7100: 0.723256
-Cost after iteration 7200: 0.716723
-Cost after iteration 7300: 0.710327
-Cost after iteration 7400: 0.704063
-Cost after iteration 7500: 0.697928
-Cost after iteration 7600: 0.691915
-Cost after iteration 7700: 0.686023
-Cost after iteration 7800: 0.680246
-Cost after iteration 7900: 0.674582
-Cost after iteration 8000: 0.669026
-Cost after iteration 8100: 0.663575
-Cost after iteration 8200: 0.658226
-Cost after iteration 8300: 0.652977
-Cost after iteration 8400: 0.647823
-Cost after iteration 8500: 0.642762
-Cost after iteration 8600: 0.637792
-Cost after iteration 8700: 0.632910
-Cost after iteration 8800: 0.628113
-Cost after iteration 8900: 0.623399
-Cost after iteration 9000: 0.618766
-Cost after iteration 9100: 0.614211
-Cost after iteration 9200: 0.609733
-Cost after iteration 9300: 0.605328
-Cost after iteration 9400: 0.600996
-Cost after iteration 9500: 0.596735
-Cost after iteration 9600: 0.592541
-Cost after iteration 9700: 0.588415
-Cost after iteration 9800: 0.584353
-Cost after iteration 9900: 0.580355
-Cost after iteration 10000: 0.576418
-Cost after iteration 10100: 0.572542
-Cost after iteration 10200: 0.568725
-Cost after iteration 10300: 0.564964
-Cost after iteration 10400: 0.561260
-Cost after iteration 10500: 0.557610
-Cost after iteration 10600: 0.554014
-Cost after iteration 10700: 0.550470
-Cost after iteration 10800: 0.546976
-Cost after iteration 10900: 0.543532
-Cost after iteration 11000: 0.540137
-Cost after iteration 11100: 0.536789
-Cost after iteration 11200: 0.533488
-Cost after iteration 11300: 0.530232
-Cost after iteration 11400: 0.527020
-Cost after iteration 11500: 0.523851
-Cost after iteration 11600: 0.520726
-Cost after iteration 11700: 0.517641
-Cost after iteration 11800: 0.514597
-Cost after iteration 11900: 0.511593
-Cost after iteration 12000: 0.508628
-Cost after iteration 12100: 0.505701
-Cost after iteration 12200: 0.502812
-Cost after iteration 12300: 0.499958
-Cost after iteration 12400: 0.497141
-Cost after iteration 12500: 0.494359
-Cost after iteration 12600: 0.491612
-Cost after iteration 12700: 0.488898
-Cost after iteration 12800: 0.486217
-Cost after iteration 12900: 0.483569
-Cost after iteration 13000: 0.480952
-Cost after iteration 13100: 0.478367
-Cost after iteration 13200: 0.475812
-Cost after iteration 13300: 0.473287
-Cost after iteration 13400: 0.470792
-Cost after iteration 13500: 0.468326
-Cost after iteration 13600: 0.465888
-Cost after iteration 13700: 0.463478
-Cost after iteration 13800: 0.461095
-Cost after iteration 13900: 0.458739
-Cost after iteration 14000: 0.456409
-Cost after iteration 14100: 0.454106
-Cost after iteration 14200: 0.451828
-Cost after iteration 14300: 0.449574
-Cost after iteration 14400: 0.447346
-Cost after iteration 14500: 0.445141
-Cost after iteration 14600: 0.442961
-Cost after iteration 14700: 0.440803
-Cost after iteration 14800: 0.438669
-Cost after iteration 14900: 0.436557
-Cost after iteration 15000: 0.434467
-Cost after iteration 15100: 0.432399
-Cost after iteration 15200: 0.430352
-Cost after iteration 15300: 0.428326
-Cost after iteration 15400: 0.426321
-Cost after iteration 15500: 0.424337
-Cost after iteration 15600: 0.422372
-Cost after iteration 15700: 0.420428
-Cost after iteration 15800: 0.418502
-Cost after iteration 15900: 0.416596
-Cost after iteration 16000: 0.414709
-Cost after iteration 16100: 0.412840
-Cost after iteration 16200: 0.410989
-Cost after iteration 16300: 0.409157
-Cost after iteration 16400: 0.407342
-Cost after iteration 16500: 0.405544
-Cost after iteration 16600: 0.403764
-Cost after iteration 16700: 0.402000
-Cost after iteration 16800: 0.400253
-Cost after iteration 16900: 0.398523
-Cost after iteration 17000: 0.396808
-Cost after iteration 17100: 0.395110
-Cost after iteration 17200: 0.393427
-Cost after iteration 17300: 0.391759
-Cost after iteration 17400: 0.390107
-Cost after iteration 17500: 0.388470
-Cost after iteration 17600: 0.386847
-Cost after iteration 17700: 0.385239
-Cost after iteration 17800: 0.383646
-Cost after iteration 17900: 0.382066
-Cost after iteration 18000: 0.380501
-Cost after iteration 18100: 0.378949
-Cost after iteration 18200: 0.377411
-Cost after iteration 18300: 0.375886
-Cost after iteration 18400: 0.374375
-Cost after iteration 18500: 0.372876
-Cost after iteration 18600: 0.371391
-Cost after iteration 18700: 0.369918
-Cost after iteration 18800: 0.368457
-Cost after iteration 18900: 0.367009
-Cost after iteration 19000: 0.365573
-Cost after iteration 19100: 0.364149
-Cost after iteration 19200: 0.362737
-Cost after iteration 19300: 0.361336
-Cost after iteration 19400: 0.359948
-Cost after iteration 19500: 0.358570
-Cost after iteration 19600: 0.357204
-Cost after iteration 19700: 0.355849
-Cost after iteration 19800: 0.354504
-Cost after iteration 19900: 0.353171
-Cost after iteration 20000: 0.351848
-Cost after iteration 20100: 0.350536
-Cost after iteration 20200: 0.349235
-Cost after iteration 20300: 0.347943
-Cost after iteration 20400: 0.346662
-Cost after iteration 20500: 0.345391
-Cost after iteration 20600: 0.344129
-Cost after iteration 20700: 0.342878
-Cost after iteration 20800: 0.341636
-Cost after iteration 20900: 0.340403
-Cost after iteration 21000: 0.339181
-Cost after iteration 21100: 0.337967
-Cost after iteration 21200: 0.336763
-Cost after iteration 21300: 0.335567
-Cost after iteration 21400: 0.334381
-Cost after iteration 21500: 0.333204
-Cost after iteration 21600: 0.332035
-Cost after iteration 21700: 0.330875
-Cost after iteration 21800: 0.329724
-Cost after iteration 21900: 0.328581
-Cost after iteration 22000: 0.327447
-Cost after iteration 22100: 0.326320
-Cost after iteration 22200: 0.325202
-Cost after iteration 22300: 0.324093
-Cost after iteration 22400: 0.322991
-Cost after iteration 22500: 0.321897
-Cost after iteration 22600: 0.320811
-Cost after iteration 22700: 0.319732
-Cost after iteration 22800: 0.318661
-Cost after iteration 22900: 0.317598
-Cost after iteration 23000: 0.316543
-Cost after iteration 23100: 0.315494
-Cost after iteration 23200: 0.314453
-Cost after iteration 23300: 0.313420
-Cost after iteration 23400: 0.312393
-Cost after iteration 23500: 0.311374
-Cost after iteration 23600: 0.310361
-Cost after iteration 23700: 0.309356
-Cost after iteration 23800: 0.308357
-Cost after iteration 23900: 0.307365
-Cost after iteration 24000: 0.306380
-Cost after iteration 24100: 0.305401
-Cost after iteration 24200: 0.304429
-Cost after iteration 24300: 0.303464
-Cost after iteration 24400: 0.302505
-Cost after iteration 24500: 0.301552
-Cost after iteration 24600: 0.300606
-Cost after iteration 24700: 0.299666
-Cost after iteration 24800: 0.298732
-Cost after iteration 24900: 0.297804
-Cost after iteration 25000: 0.296882
-Cost after iteration 25100: 0.295967
-Cost after iteration 25200: 0.295057
-Cost after iteration 25300: 0.294153
-Cost after iteration 25400: 0.293255
-Cost after iteration 25500: 0.292362
-Cost after iteration 25600: 0.291476
-Cost after iteration 25700: 0.290595
-Cost after iteration 25800: 0.289719
-Cost after iteration 25900: 0.288849
-Cost after iteration 26000: 0.287985
-Cost after iteration 26100: 0.287126
-Cost after iteration 26200: 0.286272
-Cost after iteration 26300: 0.285424
-Cost after iteration 26400: 0.284580
-Cost after iteration 26500: 0.283742
-Cost after iteration 26600: 0.282910
-Cost after iteration 26700: 0.282082
-Cost after iteration 26800: 0.281260
-Cost after iteration 26900: 0.280442
-Cost after iteration 27000: 0.279629
-Cost after iteration 27100: 0.278822
-Cost after iteration 27200: 0.278019
-Cost after iteration 27300: 0.277221
-Cost after iteration 27400: 0.276428
-Cost after iteration 27500: 0.275639
-Cost after iteration 27600: 0.274856
-Cost after iteration 27700: 0.274076
-Cost after iteration 27800: 0.273302
-Cost after iteration 27900: 0.272532
-Cost after iteration 28000: 0.271767
-Cost after iteration 28100: 0.271006
-Cost after iteration 28200: 0.270249
-Cost after iteration 28300: 0.269497
-Cost after iteration 28400: 0.268750
-Cost after iteration 28500: 0.268006
-Cost after iteration 28600: 0.267267
-Cost after iteration 28700: 0.266532
-Cost after iteration 28800: 0.265802
-Cost after iteration 28900: 0.265075
-Cost after iteration 29000: 0.264353
-Cost after iteration 29100: 0.263635
-Cost after iteration 29200: 0.262920
-Cost after iteration 29300: 0.262210
-Cost after iteration 29400: 0.261504
-Cost after iteration 29500: 0.260802
-Cost after iteration 29600: 0.260104
-Cost after iteration 29700: 0.259409
-Cost after iteration 29800: 0.258719
-Cost after iteration 29900: 0.258032
-Cost after iteration 30000: 0.257349
-Cost after iteration 30100: 0.256670
-Cost after iteration 30200: 0.255995
-Cost after iteration 30300: 0.255323
-Cost after iteration 30400: 0.254655
-Cost after iteration 30500: 0.253990
-Cost after iteration 30600: 0.253330
-Cost after iteration 30700: 0.252672
-Cost after iteration 30800: 0.252019
-Cost after iteration 30900: 0.251368
-Cost after iteration 31000: 0.250722
-Cost after iteration 31100: 0.250078
-Cost after iteration 31200: 0.249438
-Cost after iteration 31300: 0.248802
-Cost after iteration 31400: 0.248169
-Cost after iteration 31500: 0.247539
-Cost after iteration 31600: 0.246913
-Cost after iteration 31700: 0.246290
-Cost after iteration 31800: 0.245670
-Cost after iteration 31900: 0.245053
-Cost after iteration 32000: 0.244440
-Cost after iteration 32100: 0.243829
-Cost after iteration 32200: 0.243222
-Cost after iteration 32300: 0.242618
-Cost after iteration 32400: 0.242018
-Cost after iteration 32500: 0.241420
-Cost after iteration 32600: 0.240825
-Cost after iteration 32700: 0.240233
-Cost after iteration 32800: 0.239645
-Cost after iteration 32900: 0.239059
-Cost after iteration 33000: 0.238476
-Cost after iteration 33100: 0.237896
-Cost after iteration 33200: 0.237320
-Cost after iteration 33300: 0.236746
-Cost after iteration 33400: 0.236175
-Cost after iteration 33500: 0.235606
-Cost after iteration 33600: 0.235041
-Cost after iteration 33700: 0.234478
-Cost after iteration 33800: 0.233918
-Cost after iteration 33900: 0.233361
-Cost after iteration 34000: 0.232807
-Cost after iteration 34100: 0.232255
-Cost after iteration 34200: 0.231707
-Cost after iteration 34300: 0.231160
-Cost after iteration 34400: 0.230617
-Cost after iteration 34500: 0.230076
-Cost after iteration 34600: 0.229538
-Cost after iteration 34700: 0.229002
-Cost after iteration 34800: 0.228469
-Cost after iteration 34900: 0.227938
-Cost after iteration 35000: 0.227410
-Cost after iteration 35100: 0.226885
-Cost after iteration 35200: 0.226362
-Cost after iteration 35300: 0.225841
-Cost after iteration 35400: 0.225323
-Cost after iteration 35500: 0.224808
-Cost after iteration 35600: 0.224295
-Cost after iteration 35700: 0.223784
-Cost after iteration 35800: 0.223276
-Cost after iteration 35900: 0.222770
-Cost after iteration 36000: 0.222266
-Cost after iteration 36100: 0.221765
-Cost after iteration 36200: 0.221266
-Cost after iteration 36300: 0.220769
-Cost after iteration 36400: 0.220275
-Cost after iteration 36500: 0.219783
-Cost after iteration 36600: 0.219294
-Cost after iteration 36700: 0.218806
-Cost after iteration 36800: 0.218321
-Cost after iteration 36900: 0.217838
-Cost after iteration 37000: 0.217357
-Cost after iteration 37100: 0.216878
-Cost after iteration 37200: 0.216402
-Cost after iteration 37300: 0.215928
-Cost after iteration 37400: 0.215455
-Cost after iteration 37500: 0.214985
-Cost after iteration 37600: 0.214517
-Cost after iteration 37700: 0.214052
-Cost after iteration 37800: 0.213588
-Cost after iteration 37900: 0.213126
-Cost after iteration 38000: 0.212667
-Cost after iteration 38100: 0.212209
-Cost after iteration 38200: 0.211753
-Cost after iteration 38300: 0.211300
-Cost after iteration 38400: 0.210848
-Cost after iteration 38500: 0.210399
-Cost after iteration 38600: 0.209951
-Cost after iteration 38700: 0.209506
-Cost after iteration 38800: 0.209062
-Cost after iteration 38900: 0.208620
-Cost after iteration 39000: 0.208180
-Cost after iteration 39100: 0.207742
-Cost after iteration 39200: 0.207306
-Cost after iteration 39300: 0.206872
-Cost after iteration 39400: 0.206440
-Cost after iteration 39500: 0.206009
-Cost after iteration 39600: 0.205581
-Cost after iteration 39700: 0.205154
-Cost after iteration 39800: 0.204729
-Cost after iteration 39900: 0.204306
-Cost after iteration 40000: 0.203885
-Cost after iteration 40100: 0.203465
-Cost after iteration 40200: 0.203047
-Cost after iteration 40300: 0.202631
-Cost after iteration 40400: 0.202217
-Cost after iteration 40500: 0.201805
-Cost after iteration 40600: 0.201394
-Cost after iteration 40700: 0.200985
-Cost after iteration 40800: 0.200578
-Cost after iteration 40900: 0.200172
-Cost after iteration 41000: 0.199768
-Cost after iteration 41100: 0.199366
-Cost after iteration 41200: 0.198965
-Cost after iteration 41300: 0.198566
-Cost after iteration 41400: 0.198169
-Cost after iteration 41500: 0.197773
-Cost after iteration 41600: 0.197379
-Cost after iteration 41700: 0.196986
-Cost after iteration 41800: 0.196595
-Cost after iteration 41900: 0.196206
-Cost after iteration 42000: 0.195818
-Cost after iteration 42100: 0.195432
-Cost after iteration 42200: 0.195048
-Cost after iteration 42300: 0.194665
-Cost after iteration 42400: 0.194283
-Cost after iteration 42500: 0.193903
-Cost after iteration 42600: 0.193525
-Cost after iteration 42700: 0.193148
-Cost after iteration 42800: 0.192773
-Cost after iteration 42900: 0.192399
-Cost after iteration 43000: 0.192026
-Cost after iteration 43100: 0.191655
-Cost after iteration 43200: 0.191286
-Cost after iteration 43300: 0.190918
-Cost after iteration 43400: 0.190551
-Cost after iteration 43500: 0.190186
-Cost after iteration 43600: 0.189822
-Cost after iteration 43700: 0.189460
-Cost after iteration 43800: 0.189099
-Cost after iteration 43900: 0.188740
-Cost after iteration 44000: 0.188382
-Cost after iteration 44100: 0.188025
-Cost after iteration 44200: 0.187670
-Cost after iteration 44300: 0.187316
-Cost after iteration 44400: 0.186964
-Cost after iteration 44500: 0.186612
-Cost after iteration 44600: 0.186263
-Cost after iteration 44700: 0.185914
-Cost after iteration 44800: 0.185567
-Cost after iteration 44900: 0.185221
-Cost after iteration 45000: 0.184877
-Cost after iteration 45100: 0.184534
-Cost after iteration 45200: 0.184192
-Cost after iteration 45300: 0.183851
-Cost after iteration 45400: 0.183512
-Cost after iteration 45500: 0.183174
-Cost after iteration 45600: 0.182837
-Cost after iteration 45700: 0.182502
-Cost after iteration 45800: 0.182167
-Cost after iteration 45900: 0.181834
-Cost after iteration 46000: 0.181503
-Cost after iteration 46100: 0.181172
-Cost after iteration 46200: 0.180843
-Cost after iteration 46300: 0.180515
-Cost after iteration 46400: 0.180188
-Cost after iteration 46500: 0.179863
-Cost after iteration 46600: 0.179538
-Cost after iteration 46700: 0.179215
-Cost after iteration 46800: 0.178893
-Cost after iteration 46900: 0.178572
-Cost after iteration 47000: 0.178253
-Cost after iteration 47100: 0.177934
-Cost after iteration 47200: 0.177617
-Cost after iteration 47300: 0.177301
-Cost after iteration 47400: 0.176986
-Cost after iteration 47500: 0.176672
-Cost after iteration 47600: 0.176359
-Cost after iteration 47700: 0.176048
-Cost after iteration 47800: 0.175737
-Cost after iteration 47900: 0.175428
-Cost after iteration 48000: 0.175120
-Cost after iteration 48100: 0.174812
-Cost after iteration 48200: 0.174506
-Cost after iteration 48300: 0.174201
-Cost after iteration 48400: 0.173898
-Cost after iteration 48500: 0.173595
-Cost after iteration 48600: 0.173293
-Cost after iteration 48700: 0.172993
-Cost after iteration 48800: 0.172693
-Cost after iteration 48900: 0.172395
-Cost after iteration 49000: 0.172097
-Cost after iteration 49100: 0.171801
-Cost after iteration 49200: 0.171505
-Cost after iteration 49300: 0.171211
-Cost after iteration 49400: 0.170918
-Cost after iteration 49500: 0.170626
-Cost after iteration 49600: 0.170334
-Cost after iteration 49700: 0.170044
-Cost after iteration 49800: 0.169755
-Cost after iteration 49900: 0.169467
-Cost after iteration 50000: 0.169180
-Cost after iteration 50100: 0.168893
-Cost after iteration 50200: 0.168608
-Cost after iteration 50300: 0.168324
-Cost after iteration 50400: 0.168041
-Cost after iteration 50500: 0.167758
-Cost after iteration 50600: 0.167477
-Cost after iteration 50700: 0.167197
-Cost after iteration 50800: 0.166917
-Cost after iteration 50900: 0.166639
-Cost after iteration 51000: 0.166361
-Cost after iteration 51100: 0.166085
-Cost after iteration 51200: 0.165809
-Cost after iteration 51300: 0.165535
-Cost after iteration 51400: 0.165261
-Cost after iteration 51500: 0.164988
-Cost after iteration 51600: 0.164716
-Cost after iteration 51700: 0.164445
-Cost after iteration 51800: 0.164175
-Cost after iteration 51900: 0.163906
-Cost after iteration 52000: 0.163638
-Cost after iteration 52100: 0.163370
-Cost after iteration 52200: 0.163104
-Cost after iteration 52300: 0.162838
-Cost after iteration 52400: 0.162573
-Cost after iteration 52500: 0.162310
-Cost after iteration 52600: 0.162047
-Cost after iteration 52700: 0.161784
-Cost after iteration 52800: 0.161523
-Cost after iteration 52900: 0.161263
-Cost after iteration 53000: 0.161003
-Cost after iteration 53100: 0.160745
-Cost after iteration 53200: 0.160487
-Cost after iteration 53300: 0.160230
-Cost after iteration 53400: 0.159974
-Cost after iteration 53500: 0.159718
-Cost after iteration 53600: 0.159464
-Cost after iteration 53700: 0.159210
-Cost after iteration 53800: 0.158957
-Cost after iteration 53900: 0.158705
-Cost after iteration 54000: 0.158454
-Cost after iteration 54100: 0.158204
-Cost after iteration 54200: 0.157954
-Cost after iteration 54300: 0.157705
-Cost after iteration 54400: 0.157458
-Cost after iteration 54500: 0.157210
-Cost after iteration 54600: 0.156964
-Cost after iteration 54700: 0.156718
-Cost after iteration 54800: 0.156474
-Cost after iteration 54900: 0.156229
-Cost after iteration 55000: 0.155986
-Cost after iteration 55100: 0.155744
-Cost after iteration 55200: 0.155502
-Cost after iteration 55300: 0.155261
-Cost after iteration 55400: 0.155021
-Cost after iteration 55500: 0.154781
-Cost after iteration 55600: 0.154543
-Cost after iteration 55700: 0.154305
-Cost after iteration 55800: 0.154068
-Cost after iteration 55900: 0.153831
-Cost after iteration 56000: 0.153595
-Cost after iteration 56100: 0.153360
-Cost after iteration 56200: 0.153126
-Cost after iteration 56300: 0.152893
-Cost after iteration 56400: 0.152660
-Cost after iteration 56500: 0.152428
-Cost after iteration 56600: 0.152196
-Cost after iteration 56700: 0.151966
-Cost after iteration 56800: 0.151736
-Cost after iteration 56900: 0.151507
-Cost after iteration 57000: 0.151278
-Cost after iteration 57100: 0.151050
-Cost after iteration 57200: 0.150823
-Cost after iteration 57300: 0.150597
-Cost after iteration 57400: 0.150371
-Cost after iteration 57500: 0.150146
-Cost after iteration 57600: 0.149922
-Cost after iteration 57700: 0.149698
-Cost after iteration 57800: 0.149475
-Cost after iteration 57900: 0.149253
-Cost after iteration 58000: 0.149031
-Cost after iteration 58100: 0.148810
-Cost after iteration 58200: 0.148590
-Cost after iteration 58300: 0.148370
-Cost after iteration 58400: 0.148151
-Cost after iteration 58500: 0.147933
-Cost after iteration 58600: 0.147715
-Cost after iteration 58700: 0.147498
-Cost after iteration 58800: 0.147282
-Cost after iteration 58900: 0.147066
-Cost after iteration 59000: 0.146851
-Cost after iteration 59100: 0.146636
-Cost after iteration 59200: 0.146423
-Cost after iteration 59300: 0.146209
-Cost after iteration 59400: 0.145997
-Cost after iteration 59500: 0.145785
-Cost after iteration 59600: 0.145574
-Cost after iteration 59700: 0.145363
-Cost after iteration 59800: 0.145153
-Cost after iteration 59900: 0.144943
-Cost after iteration 60000: 0.144735
-Cost after iteration 60100: 0.144526
-Cost after iteration 60200: 0.144319
-Cost after iteration 60300: 0.144112
-Cost after iteration 60400: 0.143906
-Cost after iteration 60500: 0.143700
-Cost after iteration 60600: 0.143495
-Cost after iteration 60700: 0.143290
-Cost after iteration 60800: 0.143086
-Cost after iteration 60900: 0.142883
-Cost after iteration 61000: 0.142680
-Cost after iteration 61100: 0.142478
-Cost after iteration 61200: 0.142276
-Cost after iteration 61300: 0.142075
-Cost after iteration 61400: 0.141874
-Cost after iteration 61500: 0.141674
-Cost after iteration 61600: 0.141475
-Cost after iteration 61700: 0.141276
-Cost after iteration 61800: 0.141078
-Cost after iteration 61900: 0.140880
-Cost after iteration 62000: 0.140683
-Cost after iteration 62100: 0.140487
-Cost after iteration 62200: 0.140291
-Cost after iteration 62300: 0.140095
-Cost after iteration 62400: 0.139901
-Cost after iteration 62500: 0.139706
-Cost after iteration 62600: 0.139513
-Cost after iteration 62700: 0.139319
-Cost after iteration 62800: 0.139127
-Cost after iteration 62900: 0.138935
-Cost after iteration 63000: 0.138743
-Cost after iteration 63100: 0.138552
-Cost after iteration 63200: 0.138361
-Cost after iteration 63300: 0.138171
-Cost after iteration 63400: 0.137982
-Cost after iteration 63500: 0.137793
-Cost after iteration 63600: 0.137605
-Cost after iteration 63700: 0.137417
-Cost after iteration 63800: 0.137229
-Cost after iteration 63900: 0.137043
-Cost after iteration 64000: 0.136856
-Cost after iteration 64100: 0.136671
-Cost after iteration 64200: 0.136485
-Cost after iteration 64300: 0.136300
-Cost after iteration 64400: 0.136116
-Cost after iteration 64500: 0.135932
-Cost after iteration 64600: 0.135749
-Cost after iteration 64700: 0.135566
-Cost after iteration 64800: 0.135384
-Cost after iteration 64900: 0.135202
-Cost after iteration 65000: 0.135021
-Cost after iteration 65100: 0.134840
-Cost after iteration 65200: 0.134660
-Cost after iteration 65300: 0.134480
-Cost after iteration 65400: 0.134301
-Cost after iteration 65500: 0.134122
-Cost after iteration 65600: 0.133944
-Cost after iteration 65700: 0.133766
-Cost after iteration 65800: 0.133589
-Cost after iteration 65900: 0.133412
-Cost after iteration 66000: 0.133235
-Cost after iteration 66100: 0.133059
-Cost after iteration 66200: 0.132884
-Cost after iteration 66300: 0.132709
-Cost after iteration 66400: 0.132534
-Cost after iteration 66500: 0.132360
-Cost after iteration 66600: 0.132187
-Cost after iteration 66700: 0.132014
-Cost after iteration 66800: 0.131841
-Cost after iteration 66900: 0.131669
-Cost after iteration 67000: 0.131497
-Cost after iteration 67100: 0.131326
-Cost after iteration 67200: 0.131155
-Cost after iteration 67300: 0.130984
-Cost after iteration 67400: 0.130814
-Cost after iteration 67500: 0.130645
-Cost after iteration 67600: 0.130476
-Cost after iteration 67700: 0.130307
-Cost after iteration 67800: 0.130139
-Cost after iteration 67900: 0.129971
-Cost after iteration 68000: 0.129804
-Cost after iteration 68100: 0.129637
-Cost after iteration 68200: 0.129471
-Cost after iteration 68300: 0.129305
-Cost after iteration 68400: 0.129139
-Cost after iteration 68500: 0.128974
-Cost after iteration 68600: 0.128809
-Cost after iteration 68700: 0.128645
-Cost after iteration 68800: 0.128481
-Cost after iteration 68900: 0.128318
-Cost after iteration 69000: 0.128155
-Cost after iteration 69100: 0.127992
-Cost after iteration 69200: 0.127830
-Cost after iteration 69300: 0.127668
-Cost after iteration 69400: 0.127507
-Cost after iteration 69500: 0.127346
-Cost after iteration 69600: 0.127185
-Cost after iteration 69700: 0.127025
-Cost after iteration 69800: 0.126866
-Cost after iteration 69900: 0.126706
-Cost after iteration 70000: 0.126547
-Cost after iteration 70100: 0.126389
-Cost after iteration 70200: 0.126231
-Cost after iteration 70300: 0.126073
-Cost after iteration 70400: 0.125916
-Cost after iteration 70500: 0.125759
-Cost after iteration 70600: 0.125603
-Cost after iteration 70700: 0.125446
-Cost after iteration 70800: 0.125291
-Cost after iteration 70900: 0.125135
-Cost after iteration 71000: 0.124981
-Cost after iteration 71100: 0.124826
-Cost after iteration 71200: 0.124672
-Cost after iteration 71300: 0.124518
-Cost after iteration 71400: 0.124365
-Cost after iteration 71500: 0.124212
-Cost after iteration 71600: 0.124059
-Cost after iteration 71700: 0.123907
-Cost after iteration 71800: 0.123755
-Cost after iteration 71900: 0.123604
-Cost after iteration 72000: 0.123453
-Cost after iteration 72100: 0.123302
-Cost after iteration 72200: 0.123152
-Cost after iteration 72300: 0.123002
-Cost after iteration 72400: 0.122852
-Cost after iteration 72500: 0.122703
-Cost after iteration 72600: 0.122554
-Cost after iteration 72700: 0.122405
-Cost after iteration 72800: 0.122257
-Cost after iteration 72900: 0.122110
-Cost after iteration 73000: 0.121962
-Cost after iteration 73100: 0.121815
-Cost after iteration 73200: 0.121668
-Cost after iteration 73300: 0.121522
-Cost after iteration 73400: 0.121376
-Cost after iteration 73500: 0.121231
-Cost after iteration 73600: 0.121085
-Cost after iteration 73700: 0.120940
-Cost after iteration 73800: 0.120796
-Cost after iteration 73900: 0.120652
-Cost after iteration 74000: 0.120508
-Cost after iteration 74100: 0.120364
-Cost after iteration 74200: 0.120221
-Cost after iteration 74300: 0.120078
-Cost after iteration 74400: 0.119936
-Cost after iteration 74500: 0.119794
-Cost after iteration 74600: 0.119652
-Cost after iteration 74700: 0.119510
-Cost after iteration 74800: 0.119369
-Cost after iteration 74900: 0.119229
-Cost after iteration 75000: 0.119088
-Cost after iteration 75100: 0.118948
-Cost after iteration 75200: 0.118808
-Cost after iteration 75300: 0.118669
-Cost after iteration 75400: 0.118530
-Cost after iteration 75500: 0.118391
-Cost after iteration 75600: 0.118253
-Cost after iteration 75700: 0.118114
-Cost after iteration 75800: 0.117977
-Cost after iteration 75900: 0.117839
-Cost after iteration 76000: 0.117702
-Cost after iteration 76100: 0.117565
-Cost after iteration 76200: 0.117429
-Cost after iteration 76300: 0.117293
-Cost after iteration 76400: 0.117157
-Cost after iteration 76500: 0.117021
-Cost after iteration 76600: 0.116886
-Cost after iteration 76700: 0.116751
-Cost after iteration 76800: 0.116617
-Cost after iteration 76900: 0.116482
-Cost after iteration 77000: 0.116348
-Cost after iteration 77100: 0.116215
-Cost after iteration 77200: 0.116081
-Cost after iteration 77300: 0.115948
-Cost after iteration 77400: 0.115816
-Cost after iteration 77500: 0.115683
-Cost after iteration 77600: 0.115551
-Cost after iteration 77700: 0.115419
-Cost after iteration 77800: 0.115288
-Cost after iteration 77900: 0.115157
-Cost after iteration 78000: 0.115026
-Cost after iteration 78100: 0.114895
-Cost after iteration 78200: 0.114765
-Cost after iteration 78300: 0.114635
-Cost after iteration 78400: 0.114505
-Cost after iteration 78500: 0.114376
-Cost after iteration 78600: 0.114247
-Cost after iteration 78700: 0.114118
-Cost after iteration 78800: 0.113990
-Cost after iteration 78900: 0.113861
-Cost after iteration 79000: 0.113733
-Cost after iteration 79100: 0.113606
-Cost after iteration 79200: 0.113478
-Cost after iteration 79300: 0.113351
-Cost after iteration 79400: 0.113225
-Cost after iteration 79500: 0.113098
-Cost after iteration 79600: 0.112972
-Cost after iteration 79700: 0.112846
-Cost after iteration 79800: 0.112720
-Cost after iteration 79900: 0.112595
-Cost after iteration 80000: 0.112470
-Cost after iteration 80100: 0.112345
-Cost after iteration 80200: 0.112221
-Cost after iteration 80300: 0.112097
-Cost after iteration 80400: 0.111973
-Cost after iteration 80500: 0.111849
-Cost after iteration 80600: 0.111726
-Cost after iteration 80700: 0.111603
-Cost after iteration 80800: 0.111480
-Cost after iteration 80900: 0.111357
-Cost after iteration 81000: 0.111235
-Cost after iteration 81100: 0.111113
-Cost after iteration 81200: 0.110991
-Cost after iteration 81300: 0.110870
-Cost after iteration 81400: 0.110749
-Cost after iteration 81500: 0.110628
-Cost after iteration 81600: 0.110507
-Cost after iteration 81700: 0.110387
-Cost after iteration 81800: 0.110266
-Cost after iteration 81900: 0.110147
-Cost after iteration 82000: 0.110027
-Cost after iteration 82100: 0.109908
-Cost after iteration 82200: 0.109789
-Cost after iteration 82300: 0.109670
-Cost after iteration 82400: 0.109551
-Cost after iteration 82500: 0.109433
-Cost after iteration 82600: 0.109315
-Cost after iteration 82700: 0.109197
-Cost after iteration 82800: 0.109080
-Cost after iteration 82900: 0.108962
-Cost after iteration 83000: 0.108845
-Cost after iteration 83100: 0.108729
-Cost after iteration 83200: 0.108612
-Cost after iteration 83300: 0.108496
-Cost after iteration 83400: 0.108380
-Cost after iteration 83500: 0.108264
-Cost after iteration 83600: 0.108149
-Cost after iteration 83700: 0.108033
-Cost after iteration 83800: 0.107918
-Cost after iteration 83900: 0.107804
-Cost after iteration 84000: 0.107689
-Cost after iteration 84100: 0.107575
-Cost after iteration 84200: 0.107461
-Cost after iteration 84300: 0.107347
-Cost after iteration 84400: 0.107234
-Cost after iteration 84500: 0.107120
-Cost after iteration 84600: 0.107007
-Cost after iteration 84700: 0.106894
-Cost after iteration 84800: 0.106782
-Cost after iteration 84900: 0.106670
-Cost after iteration 85000: 0.106557
-Cost after iteration 85100: 0.106446
-Cost after iteration 85200: 0.106334
-Cost after iteration 85300: 0.106223
-Cost after iteration 85400: 0.106112
-Cost after iteration 85500: 0.106001
-Cost after iteration 85600: 0.105890
-Cost after iteration 85700: 0.105780
-Cost after iteration 85800: 0.105669
-Cost after iteration 85900: 0.105559
-Cost after iteration 86000: 0.105450
-Cost after iteration 86100: 0.105340
-Cost after iteration 86200: 0.105231
-Cost after iteration 86300: 0.105122
-Cost after iteration 86400: 0.105013
-Cost after iteration 86500: 0.104905
-Cost after iteration 86600: 0.104796
-Cost after iteration 86700: 0.104688
-Cost after iteration 86800: 0.104580
-Cost after iteration 86900: 0.104472
-Cost after iteration 87000: 0.104365
-Cost after iteration 87100: 0.104258
-Cost after iteration 87200: 0.104151
-Cost after iteration 87300: 0.104044
-Cost after iteration 87400: 0.103937
-Cost after iteration 87500: 0.103831
-Cost after iteration 87600: 0.103725
-Cost after iteration 87700: 0.103619
-Cost after iteration 87800: 0.103513
-Cost after iteration 87900: 0.103408
-Cost after iteration 88000: 0.103303
-Cost after iteration 88100: 0.103198
-Cost after iteration 88200: 0.103093
-Cost after iteration 88300: 0.102988
-Cost after iteration 88400: 0.102884
-Cost after iteration 88500: 0.102780
-Cost after iteration 88600: 0.102676
-Cost after iteration 88700: 0.102572
-Cost after iteration 88800: 0.102468
-Cost after iteration 88900: 0.102365
-Cost after iteration 89000: 0.102262
-Cost after iteration 89100: 0.102159
-Cost after iteration 89200: 0.102056
-Cost after iteration 89300: 0.101954
-Cost after iteration 89400: 0.101852
-Cost after iteration 89500: 0.101750
-Cost after iteration 89600: 0.101648
-Cost after iteration 89700: 0.101546
-Cost after iteration 89800: 0.101445
-Cost after iteration 89900: 0.101343
-Cost after iteration 90000: 0.101242
-Cost after iteration 90100: 0.101142
-Cost after iteration 90200: 0.101041
-Cost after iteration 90300: 0.100941
-Cost after iteration 90400: 0.100840
-Cost after iteration 90500: 0.100740
-Cost after iteration 90600: 0.100640
-Cost after iteration 90700: 0.100541
-Cost after iteration 90800: 0.100441
-Cost after iteration 90900: 0.100342
-Cost after iteration 91000: 0.100243
-Cost after iteration 91100: 0.100144
-Cost after iteration 91200: 0.100046
-Cost after iteration 91300: 0.099947
-Cost after iteration 91400: 0.099849
-Cost after iteration 91500: 0.099751
-Cost after iteration 91600: 0.099653
-Cost after iteration 91700: 0.099556
-Cost after iteration 91800: 0.099458
-Cost after iteration 91900: 0.099361
-Cost after iteration 92000: 0.099264
-Cost after iteration 92100: 0.099167
-Cost after iteration 92200: 0.099070
-Cost after iteration 92300: 0.098974
-Cost after iteration 92400: 0.098877
-Cost after iteration 92500: 0.098781
-Cost after iteration 92600: 0.098685
-Cost after iteration 92700: 0.098590
-Cost after iteration 92800: 0.098494
-Cost after iteration 92900: 0.098399
-Cost after iteration 93000: 0.098303
-Cost after iteration 93100: 0.098208
-Cost after iteration 93200: 0.098114
-Cost after iteration 93300: 0.098019
-Cost after iteration 93400: 0.097925
-Cost after iteration 93500: 0.097830
-Cost after iteration 93600: 0.097736
-Cost after iteration 93700: 0.097642
-Cost after iteration 93800: 0.097549
-Cost after iteration 93900: 0.097455
-Cost after iteration 94000: 0.097362
-Cost after iteration 94100: 0.097269
-Cost after iteration 94200: 0.097176
-Cost after iteration 94300: 0.097083
-Cost after iteration 94400: 0.096990
-Cost after iteration 94500: 0.096898
-Cost after iteration 94600: 0.096805
-Cost after iteration 94700: 0.096713
-Cost after iteration 94800: 0.096621
-Cost after iteration 94900: 0.096530
-Cost after iteration 95000: 0.096438
-Cost after iteration 95100: 0.096347
-Cost after iteration 95200: 0.096256
-Cost after iteration 95300: 0.096165
-Cost after iteration 95400: 0.096074
-Cost after iteration 95500: 0.095983
-Cost after iteration 95600: 0.095892
-Cost after iteration 95700: 0.095802
-Cost after iteration 95800: 0.095712
-Cost after iteration 95900: 0.095622
-Cost after iteration 96000: 0.095532
-Cost after iteration 96100: 0.095442
-Cost after iteration 96200: 0.095353
-Cost after iteration 96300: 0.095264
-Cost after iteration 96400: 0.095174
-Cost after iteration 96500: 0.095086
-Cost after iteration 96600: 0.094997
-Cost after iteration 96700: 0.094908
-Cost after iteration 96800: 0.094820
-Cost after iteration 96900: 0.094731
-Cost after iteration 97000: 0.094643
-Cost after iteration 97100: 0.094555
-Cost after iteration 97200: 0.094467
-Cost after iteration 97300: 0.094380
-Cost after iteration 97400: 0.094292
-Cost after iteration 97500: 0.094205
-Cost after iteration 97600: 0.094118
-Cost after iteration 97700: 0.094031
-Cost after iteration 97800: 0.093944
-Cost after iteration 97900: 0.093857
-Cost after iteration 98000: 0.093771
-Cost after iteration 98100: 0.093684
-Cost after iteration 98200: 0.093598
-Cost after iteration 98300: 0.093512
-Cost after iteration 98400: 0.093426
-Cost after iteration 98500: 0.093341
-Cost after iteration 98600: 0.093255
-Cost after iteration 98700: 0.093170
-Cost after iteration 98800: 0.093084
-Cost after iteration 98900: 0.092999
-Cost after iteration 99000: 0.092914
-Cost after iteration 99100: 0.092830
-Cost after iteration 99200: 0.092745
-Cost after iteration 99300: 0.092661
-Cost after iteration 99400: 0.092576
-Cost after iteration 99500: 0.092492
-Cost after iteration 99600: 0.092408
-Cost after iteration 99700: 0.092324
-Cost after iteration 99800: 0.092241
-Cost after iteration 99900: 0.092157
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
 
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,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
-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
-+dKCnxa2AAAAAElFTkSuQmCC
+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
 "
 >
 </div>
@@ -13204,7 +12191,7 @@ ZYQvy7RZr1qXbJrVG3fpmJnVCbfwzczqhFv4ZmZ1woFvZlYnHPhmZnXCgW9mVicc+GZmdeL/Aw2o
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[219]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 计算超平面与坐标轴的交点</span>
