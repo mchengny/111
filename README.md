@@ -16,8 +16,10 @@
 
 *统计学习方法 - 李航*
 - Perceptron
-- K Nearest Neighbors
+- KNN
 - Naive Bayes
 - Decision Tree
 - Logistic Regression
+- SVM(waiting)
+- AdaBoost
 	 
