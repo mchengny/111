@@ -22,4 +22,4 @@
 - Logistic Regression
 - SVM(waiting)
 - AdaBoost
-	 
+- EM
