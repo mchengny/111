@@ -23,3 +23,4 @@
 - SVM(waiting)
 - AdaBoost
 - EM
+- HMM
